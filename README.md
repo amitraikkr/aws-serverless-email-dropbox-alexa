@@ -1,5 +1,5 @@
-<h1>Servless Application: Email Dropbox for Appointments setting for Alexa</h1>
-<h2> This serverless application utilizes GPT-4's Natural Language Processing capabilities to extract appointment details from emails. The appointment information is then stored in a database, which can be accessed by a custom Alexa skill for user convenience<h2> 
+<h1>A Serverless Application: Email Dropbox for Appointments</h1>
+This serverless application utilizes GPT-4's Natural Language Processing capabilities to extract appointment details from emails. The appointment information is then stored in a database, which can be accessed by a custom Alexa skill for user convenience
     <h3>Application Flow</h3>
     <ul>
         <li><strong>Email Reception:</strong>
@@ -55,11 +55,11 @@
     </ul>
 <h2>Installation</h2>
 
-1. Clone the Repository:
-<b>git clone https://github.com/your-repository.git</b>
+1. Clone the Repository:<br>
+<b>git clone https://github.com/amitraikkr/aws-serverless-email-dropbox-alexa.git</b><br>
 <b>cd your-repository</b>
 
-2. Deploy the All Stacks:
+2. Deploy the All Stacks:<br>
 <b>cdk deploy --all</b>
 
 3. Configure SES:
