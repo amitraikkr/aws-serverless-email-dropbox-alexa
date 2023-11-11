@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./lambda_email/lib/python/site-packages",
+        "./lib/python/site-packages"
+    ]
+}

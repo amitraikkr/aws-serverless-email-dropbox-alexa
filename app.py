@@ -1,28 +1,13 @@
-#!/usr/bin/env python3
-import os
+from aws_cdk import App 
+# Ensure you import the NetworkStack and ComputeStack correctly
+from compute_stack.compute_stack import ComputeStack
+from database_stack.database_stack import DatabaseStack
 
-import aws_cdk as cdk
+app = App()
 
-from aws_serverless_student_app.aws_serverless_student_app_stack import AwsServerlessStudentAppStack
-
-
-app = cdk.App()
-AwsServerlessStudentAppStack(app, "AwsServerlessStudentAppStack",
-    # If you don't specify 'env', this stack will be environment-agnostic.
-    # Account/Region-dependent features and context lookups will not work,
-    # but a single synthesized template can be deployed anywhere.
-
-    # Uncomment the next line to specialize this stack for the AWS Account
-    # and Region that are implied by the current CLI configuration.
-
-    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
-
-    # Uncomment the next line if you know exactly what Account and Region you
-    # want to deploy the stack to. */
-
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
-
-    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    )
+# Instantiate the NetworkStack
+database_stack = DatabaseStack(app, "DatabaseStack")
+# Now instantiate the ComputeStack, passing in the network_stack
+compute_stack = ComputeStack(app, "ComputeStack", database_stack=database_stack)
 
 app.synth()
